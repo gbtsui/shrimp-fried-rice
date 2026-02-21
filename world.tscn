@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://blea2gg8sfq77"]
+
+[ext_resource type="Script" path="res://scripts/inputlogger.gd" id="1_t0gu0"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="2_2mmbc"]
+[ext_resource type="Texture2D" uid="uid://cpinsbuv0vugo" path="res://icon.svg" id="3_jadky"]
+[ext_resource type="Script" path="res://enemy.gd" id="4_4pnwx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pypen"]
+radius = 58.0775
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pbrkd"]
+radius = 62.0081
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j6v5k"]
+radius = 91.0494
+
+[node name="Root" type="Node2D"]
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("1_t0gu0")
+
+[node name="Player" type="CharacterBody2D" parent="."]
+script = ExtResource("2_2mmbc")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+texture = ExtResource("3_jadky")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+
+[node name="PhysicalCollision" type="CollisionShape2D" parent="Player"]
+shape = SubResource("CircleShape2D_pypen")
+
+[node name="Hitbox" type="Area2D" parent="Player"]
+
+[node name="HitboxCollisionShape" type="CollisionShape2D" parent="Player/Hitbox"]
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(282, 111)
+texture = ExtResource("3_jadky")
+
+[node name="Enemy" type="CharacterBody2D" parent="."]
+modulate = Color(0.850226, 0, 0.276655, 1)
+script = ExtResource("4_4pnwx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemy"]
+texture = ExtResource("3_jadky")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
+shape = SubResource("CircleShape2D_pbrkd")
+
+[node name="Hurtbox" type="Area2D" parent="Enemy"]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/Hurtbox"]
+shape = SubResource("CircleShape2D_j6v5k")
