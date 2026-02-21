@@ -8,6 +8,12 @@ var rightHeld: int = 0
 
 const speed = 200
 
+@onready var stateManager = $PlayerStateManager
+@onready var healthManager = $HealthManager
+
+func _ready():
+	stateManager.change_state(0)
+
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("down"): downHeld = 1
 	elif event.is_action_released("down"): downHeld = 0
@@ -28,4 +34,10 @@ func move():
 	move_and_slide()
 
 func _physics_process(delta: float) -> void:
-	move()
+	if stateManager.current_state == 0: move()
+
+func get_state():
+	return stateManager.current_state
+
+func modulate_sprite(color: Color):
+	$CanvasLayer/Sprite2D.modulate = color
