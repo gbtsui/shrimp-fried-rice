@@ -9,5 +9,15 @@ func flashy_go_brr():
 	#$Sprite2D.position = get_viewport().get_rect().position - sprite.global_position
 	
 	# play more fun animations here
+	get_parent().get_node("AnimationPlayer").play("death")
 	
+	await get_tree().create_timer(1).timeout
 	
+	$Sprite2D.visible = false
+	$GPUParticles2D.emitting = true
+	
+	var tween = get_tree().create_tween()
+	tween.tween_property($CanvasLayer/Control/Label, "modulate", Color(1,1,1,0.9), 3) 
+
+func _process(delta):
+	$Sprite2D.position = get_parent().position

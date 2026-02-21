@@ -21,3 +21,5 @@ func kys():
 		parent.get_node("PhysicalCollision").disabled = true
 		parent.modulate = Color(0,0,0)
 		parent.get_node("CanvasLayer").flashy_go_brr()
+	elif mode == DEATH_MODE.ENEMY:
+		parent.queue_free() #add more later i guess??

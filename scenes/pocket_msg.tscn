@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgndsfobmw0t1"]
+
+[ext_resource type="Script" path="res://scripts/pocket_msg.gd" id="1_8t0ct"]
+
+[sub_resource type="Gradient" id="Gradient_sqlfi"]
+colors = PackedColorArray(0.783523, 0.783523, 0.783523, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_cvqvs"]
+gradient = SubResource("Gradient_sqlfi")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kuh2s"]
+particle_flag_disable_z = true
+angle_min = 271.0
+angle_max = 271.0
+spread = 30.0
+initial_velocity_min = 1000.0
+initial_velocity_max = 1000.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -2500.0
+linear_accel_max = -1500.0
+scale_max = 150.0
+scale_over_velocity_min = 666.67
+scale_over_velocity_max = 854.84
+color_ramp = SubResource("GradientTexture1D_cvqvs")
+
+[node name="PocketMSG" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_8t0ct")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-4, 0, 288, 176, 289, -138)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 80
+process_material = SubResource("ParticleProcessMaterial_kuh2s")
+lifetime = 0.75
+one_shot = true
+explosiveness = 0.9
+collision_base_size = 0.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="finished" from="GPUParticles2D" to="." method="_on_gpu_particles_2d_finished"]

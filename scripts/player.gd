@@ -25,8 +25,8 @@ func _input(event: InputEvent) -> void:
 	elif event.is_action_released("right"): rightHeld = 0
 
 func move():
-	var yDir = upHeld - downHeld
-	var xDir = leftHeld - rightHeld
+	var yDir = downHeld - upHeld
+	var xDir = rightHeld - leftHeld
 	
 	var dir = Vector2(xDir, yDir)
 	

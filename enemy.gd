@@ -40,3 +40,6 @@ func attack():
 func _on_range_body_entered(body: Node2D) -> void:
 	if body is Player:
 		playerInRange = true
+
+func modulate_sprite(color: Color):
+	$Sprite2D.modulate = color
