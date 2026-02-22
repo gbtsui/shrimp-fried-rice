@@ -14,7 +14,6 @@ func flashy_go_brr():
 	await get_tree().create_timer(1).timeout
 	
 	$Sprite2D.visible = false
-	$GPUParticles2D.global_position = $Sprite2D.global_position
 	$GPUParticles2D.emitting = true
 	
 	var tween = get_tree().create_tween()

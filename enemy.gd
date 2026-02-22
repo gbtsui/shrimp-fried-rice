@@ -10,8 +10,6 @@ var playerInRange = false
 var timeBetweenAttacks = 2.0
 var attackTimer = 0.0
 
-@export var enemyName: String
-
 func _ready():
 	player = get_tree().root.get_node("Root/Player")
 
