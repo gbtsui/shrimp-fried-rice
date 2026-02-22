@@ -11,8 +11,8 @@ config_version=5
 [application]
 
 config/name="Shrimp Fried Rice"
-run/main_scene="res://world.tscn"
-config/features=PackedStringArray("4.3", "Forward Plus")
+run/main_scene="uid://dj6ew4rarwj2p"
+config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]

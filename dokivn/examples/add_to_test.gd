@@ -2,7 +2,6 @@ extends Node
 
 var s := Scripted.new()
 var e : VNChar
-
 @export var text : RichTextLabel
 @export var author : Label
 
@@ -34,7 +33,7 @@ func _on_no() -> void:
 	e.says("Sorry! :(")
 	s.layer_start()
 	s.resume()
-
+	
 func _ready() -> void:
 	s.says("This is a dialogue without an author!")
 	s.hide()	#Set Opacity to 0
@@ -58,3 +57,4 @@ func _process(delta: float) -> void:
 	author.text = s.get_character().attr_name if s.get_character() != null else ""
 	author.modulate = s.get_character().attr_color if s.get_character() != null else Color.WHITE
 	author.modulate.a = s.opacity_output
+	

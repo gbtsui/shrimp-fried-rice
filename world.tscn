@@ -1,18 +1,19 @@
-[gd_scene load_steps=25 format=3 uid="uid://blea2gg8sfq77"]
+[gd_scene load_steps=26 format=3 uid="uid://blea2gg8sfq77"]
 
-[ext_resource type="Script" path="res://scripts/inputlogger.gd" id="1_t0gu0"]
-[ext_resource type="Script" path="res://scripts/player.gd" id="2_2mmbc"]
+[ext_resource type="Script" uid="uid://csgvsn06hnyec" path="res://scripts/inputlogger.gd" id="1_t0gu0"]
+[ext_resource type="Script" uid="uid://dgp7gmsjuwjgq" path="res://scripts/player.gd" id="2_2mmbc"]
 [ext_resource type="PackedScene" uid="uid://ye8thihf6typ" path="res://scenes/flashyflash.tscn" id="3_7jt8k"]
-[ext_resource type="Script" path="res://scripts/flashyflash_but_canvaslayer.gd" id="3_fvtr4"]
+[ext_resource type="Script" uid="uid://hw45n0ewaa5" path="res://scripts/flashyflash_but_canvaslayer.gd" id="3_fvtr4"]
 [ext_resource type="Texture2D" uid="uid://cpinsbuv0vugo" path="res://icon.svg" id="3_jadky"]
-[ext_resource type="Script" path="res://enemy.gd" id="4_4pnwx"]
-[ext_resource type="Script" path="res://scripts/health_manager.gd" id="5_3hgnr"]
+[ext_resource type="Script" uid="uid://vsfscbcl6ncj" path="res://enemy.gd" id="4_4pnwx"]
+[ext_resource type="Script" uid="uid://2du0qj2d2h3y" path="res://scripts/health_manager.gd" id="5_3hgnr"]
 [ext_resource type="Texture2D" uid="uid://b6tsyxpy8arvr" path="res://assets/Dayvon Daprawn Bennett.png" id="5_4fdh7"]
-[ext_resource type="Script" path="res://scripts/death_manager.gd" id="6_jsb6b"]
-[ext_resource type="Script" path="res://player_state_manager.gd" id="7_gawbx"]
-[ext_resource type="Script" path="res://scripts/pocket_msg_manager.gd" id="9_3x0cf"]
-[ext_resource type="Script" path="res://scripts/hurtbox.gd" id="9_td4gv"]
-[ext_resource type="Script" path="res://scripts/kill_manager.gd" id="12_skmim"]
+[ext_resource type="Script" uid="uid://bg61vhwk20n6w" path="res://scripts/death_manager.gd" id="6_jsb6b"]
+[ext_resource type="Script" uid="uid://d4ijmmmiaqg4j" path="res://player_state_manager.gd" id="7_gawbx"]
+[ext_resource type="Script" uid="uid://74q4y3ptuv8k" path="res://scripts/pocket_msg_manager.gd" id="9_3x0cf"]
+[ext_resource type="Script" uid="uid://b5nscsx0eefd3" path="res://scripts/hurtbox.gd" id="9_td4gv"]
+[ext_resource type="Script" uid="uid://dpb2a6oa1lo0w" path="res://scripts/kill_manager.gd" id="12_skmim"]
+[ext_resource type="Script" uid="uid://dwoiuk1p1tf7x" path="res://texture_progress_bar.gd" id="14_70uel"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xtgva"]
 particle_flag_disable_z = true
@@ -34,6 +35,21 @@ scale_over_velocity_max = 360.22
 [sub_resource type="CircleShape2D" id="CircleShape2D_pypen"]
 radius = 58.0775
 
+[sub_resource type="Animation" id="Animation_bntka"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_clai4"]
 resource_name = "death"
 length = 0.1
@@ -51,25 +67,10 @@ tracks/0/keys = {
 "values": [Vector2(0, 0), Vector2(5, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_bntka"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/Sprite2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8a5nn"]
 _data = {
-"RESET": SubResource("Animation_bntka"),
-"death": SubResource("Animation_clai4")
+&"RESET": SubResource("Animation_bntka"),
+&"death": SubResource("Animation_clai4")
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pbrkd"]
@@ -80,33 +81,6 @@ radius = 91.0494
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mhdw2"]
 radius = 112.285
-
-[sub_resource type="Animation" id="Animation_knkjv"]
-resource_name = "attack"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.166667, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1.3, 1.3), Vector2(1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Hurtbox/CollisionShape2D:disabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.166667, 0.233333),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, false]
-}
 
 [sub_resource type="Animation" id="Animation_mlxo2"]
 length = 0.001
@@ -135,10 +109,37 @@ tracks/1/keys = {
 "values": [false]
 }
 
+[sub_resource type="Animation" id="Animation_knkjv"]
+resource_name = "attack"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.3, 1.3), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Hurtbox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.233333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_652cq"]
 _data = {
-"RESET": SubResource("Animation_mlxo2"),
-"attack": SubResource("Animation_knkjv")
+&"RESET": SubResource("Animation_mlxo2"),
+&"attack": SubResource("Animation_knkjv")
 }
 
 [node name="Root" type="Node2D"]
@@ -167,9 +168,9 @@ texture = ExtResource("5_4fdh7")
 modulate = Color(0, 0, 0, 1)
 emitting = false
 amount = 67
-process_material = SubResource("ParticleProcessMaterial_xtgva")
 one_shot = true
 explosiveness = 0.9
+process_material = SubResource("ParticleProcessMaterial_xtgva")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 scale = Vector2(0.581531, 0.448109)
@@ -194,7 +195,7 @@ script = ExtResource("7_gawbx")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
 libraries = {
-"": SubResource("AnimationLibrary_8a5nn")
+&"": SubResource("AnimationLibrary_8a5nn")
 }
 
 [node name="PocketMSGManager" type="Node2D" parent="Player"]
@@ -231,7 +232,7 @@ shape = SubResource("CircleShape2D_mhdw2")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy"]
 libraries = {
-"": SubResource("AnimationLibrary_652cq")
+&"": SubResource("AnimationLibrary_652cq")
 }
 
 [node name="HealthManager" type="Node" parent="Enemy"]
@@ -242,6 +243,33 @@ script = ExtResource("6_jsb6b")
 
 [node name="KillManager" type="Node" parent="."]
 script = ExtResource("12_skmim")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Health bar" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer/Health bar"]
+custom_minimum_size = Vector2(700, 50)
+layout_mode = 0
+offset_left = -927.0
+offset_top = 362.0
+offset_right = -227.0
+offset_bottom = 457.0
+max_value = 10.0
+script = ExtResource("14_70uel")
+
+[node name="Label" type="Label" parent="CanvasLayer/Health bar"]
+layout_mode = 0
+offset_left = -943.0
+offset_top = 460.0
+offset_right = -699.0
+offset_bottom = 529.0
+theme_override_font_sizes/font_size = 50
+text = "Health: 00"
 
 [connection signal="body_entered" from="Enemy/Hurtbox" to="Enemy/Hurtbox" method="_on_body_entered"]
 [connection signal="body_entered" from="Enemy/Range" to="Enemy" method="_on_range_body_entered"]

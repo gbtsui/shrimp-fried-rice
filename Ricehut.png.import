@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6tsyxpy8arvr"
-path="res://.godot/imported/Dayvon Daprawn Bennett.png-51bc16b5b0c25541b049910c5af9918b.ctex"
+uid="uid://tjt3myuks0yy"
+path="res://.godot/imported/Ricehut.png-40b63ddf6c48d4fcc148330bf48af601.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Dayvon Daprawn Bennett.png"
-dest_files=["res://.godot/imported/Dayvon Daprawn Bennett.png-51bc16b5b0c25541b049910c5af9918b.ctex"]
+source_file="res://Ricehut.png"
+dest_files=["res://.godot/imported/Ricehut.png-40b63ddf6c48d4fcc148330bf48af601.ctex"]
 
 [params]
 

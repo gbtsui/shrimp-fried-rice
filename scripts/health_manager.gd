@@ -3,8 +3,9 @@ class_name HealthManager
 
 @export var hp = 10
 @export var max_hp = 10
-
 @onready var deathManager: DeathManager = get_parent().get_node("DeathManager")
+
+
 
 func damage(dmg_amount):
 	hp -= dmg_amount
