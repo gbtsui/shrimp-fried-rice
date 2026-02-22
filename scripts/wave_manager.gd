@@ -3,7 +3,8 @@ extends Node
 class_name WaveManager
 
 const enemies: Dictionary = {
-	"pea": preload("res://scenes/pea.tscn")
+	"pea": preload("res://scenes/pea.tscn"),
+	"carrot": preload("res://scenes/carrot.tscn")
 }
 
 @export var enemyLimit = 5

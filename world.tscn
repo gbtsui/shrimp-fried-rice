@@ -1,7 +1,8 @@
-[gd_scene load_steps=23 format=3 uid="uid://blea2gg8sfq77"]
+[gd_scene load_steps=26 format=3 uid="uid://blea2gg8sfq77"]
 
-[ext_resource type="Texture2D" uid="uid://hm1jhjredype" path="res://assets/background .png" id="1_r167m"]
+[ext_resource type="Texture2D" uid="uid://d15t14idww00o" path="res://assets/new background yessir.png" id="1_o7lwj"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="2_2mmbc"]
+[ext_resource type="PackedScene" uid="uid://djvoqyul6vtl3" path="res://scenes/overlay.tscn" id="3_2ipbq"]
 [ext_resource type="PackedScene" uid="uid://ye8thihf6typ" path="res://scenes/flashyflash.tscn" id="3_7jt8k"]
 [ext_resource type="Script" path="res://scripts/flashyflash_but_canvaslayer.gd" id="3_fvtr4"]
 [ext_resource type="Script" path="res://scripts/health_manager.gd" id="5_3hgnr"]
@@ -9,10 +10,11 @@
 [ext_resource type="Texture2D" uid="uid://behkc6y0k8yo6" path="res://assets/got a glock wit a ruler clip.png" id="5_j4o6i"]
 [ext_resource type="Script" path="res://scripts/death_manager.gd" id="6_jsb6b"]
 [ext_resource type="Script" path="res://player_state_manager.gd" id="7_gawbx"]
+[ext_resource type="Texture2D" uid="uid://ba01cjsx85y5m" path="res://assets/soy sauce.png" id="7_vq0yb"]
 [ext_resource type="Script" path="res://scripts/pocket_msg_manager.gd" id="9_3x0cf"]
 [ext_resource type="Script" path="res://scripts/kill_manager.gd" id="12_skmim"]
+[ext_resource type="Script" path="res://scripts/soy_sauce_guzzling_manager.gd" id="13_4m1y3"]
 [ext_resource type="Script" path="res://scripts/wave_manager.gd" id="13_o54qq"]
-[ext_resource type="PackedScene" uid="uid://cf7nnl7p1pex7" path="res://scenes/carrot.tscn" id="13_oaw6k"]
 [ext_resource type="Script" path="res://scripts/timekeeper.gd" id="14_8x3vt"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xtgva"]
@@ -64,6 +66,54 @@ tracks/1/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/Sprite2D/SoySauce/ILoveSoylent:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/Sprite2D/SoySauce/ILoveSoylent:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-7.99999, -2)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/Sprite2D/SoySauce/ILoveSoylent:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.15, 0.15)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasLayer/Sprite2D/SoySauce/ILoveSoylent:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.23918]
+}
 
 [sub_resource type="Animation" id="Animation_ydrjf"]
 resource_name = "attack"
@@ -98,11 +148,63 @@ resource_name = "death"
 length = 0.1
 loop_mode = 1
 
+[sub_resource type="Animation" id="Animation_a7spi"]
+resource_name = "drink"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Sprite2D/SoySauce/ILoveSoylent:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Sprite2D/SoySauce/ILoveSoylent:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0333333, 0.266667, 0.566667, 0.666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-7.99999, -2), Vector2(-113, -16), Vector2(-113, -16), Vector2(-110, -83)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/Sprite2D/SoySauce/ILoveSoylent:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0333333, 0.266667, 0.666667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.15, 0.15), Vector2(0.25, 0.25), Vector2(0.25, 0.25), Vector2(1e-05, 1e-05)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/Sprite2D/SoySauce/ILoveSoylent:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.566667, 0.666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.23918, 1.59349]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8a5nn"]
 _data = {
 "RESET": SubResource("Animation_bntka"),
 "attack": SubResource("Animation_ydrjf"),
-"death": SubResource("Animation_clai4")
+"death": SubResource("Animation_clai4"),
+"drink": SubResource("Animation_a7spi")
 }
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uli3x"]
@@ -111,7 +213,7 @@ normal = Vector2(-0.0174954, 0.999847)
 [node name="Root" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_r167m")
+texture = ExtResource("1_o7lwj")
 
 [node name="Player" type="CharacterBody2D" parent="."]
 script = ExtResource("2_2mmbc")
@@ -123,12 +225,24 @@ script = ExtResource("3_fvtr4")
 [node name="CanvasLayer" type="CanvasLayer" parent="Player/CanvasLayer"]
 layer = 0
 
+[node name="Overlay" parent="Player/CanvasLayer/CanvasLayer" instance=ExtResource("3_2ipbq")]
+
 [node name="Control" parent="Player/CanvasLayer/CanvasLayer" instance=ExtResource("3_7jt8k")]
 visible = false
 
 [node name="Sprite2D" type="Sprite2D" parent="Player/CanvasLayer"]
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("5_4fdh7")
+
+[node name="SoySauce" type="Node2D" parent="Player/CanvasLayer/Sprite2D"]
+scale = Vector2(10, 10)
+
+[node name="ILoveSoylent" type="Sprite2D" parent="Player/CanvasLayer/Sprite2D/SoySauce"]
+visible = false
+position = Vector2(-7.99999, -2)
+rotation = 1.23918
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("7_vq0yb")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="Player/CanvasLayer"]
 modulate = Color(0, 0, 0, 1)
@@ -176,6 +290,9 @@ libraries = {
 [node name="PocketMSGManager" type="Node2D" parent="Player"]
 script = ExtResource("9_3x0cf")
 
+[node name="SoySauceGuzzlingManager" type="Node" parent="Player"]
+script = ExtResource("13_4m1y3")
+
 [node name="KillManager" type="Node" parent="."]
 script = ExtResource("12_skmim")
 
@@ -208,9 +325,6 @@ position = Vector2(898, 2)
 rotation = 1.5533
 shape = SubResource("WorldBoundaryShape2D_uli3x")
 one_way_collision = true
-
-[node name="Enemy" parent="boundaries" instance=ExtResource("13_oaw6k")]
-position = Vector2(643, 170)
 
 [node name="SpawnPoint1" type="Node2D" parent="."]
 position = Vector2(1135, 0)
