@@ -1,6 +1,13 @@
+<<<<<<< HEAD
 [gd_scene load_steps=6 format=3 uid="uid://c72fu1xd0qnnn"]
 
 [ext_resource type="PackedScene" uid="uid://tmyggngok3eb" path="res://scenes/enemy.tscn" id="1_bifvu"]
+=======
+[gd_scene load_steps=10 format=3 uid="uid://c72fu1xd0qnnn"]
+
+[ext_resource type="PackedScene" uid="uid://tmyggngok3eb" path="res://scenes/enemy.tscn" id="1_bifvu"]
+[ext_resource type="Script" path="res://pea.gd" id="2_ekckt"]
+>>>>>>> b06b4b35c128240f85faccddfc1e98c8507ffdc9
 [ext_resource type="Texture2D" uid="uid://d3y5gj7n1neor" path="res://assets/Pea/Untitled_Artwork-1.png" id="2_ogy2u"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7nwlx"]
@@ -14,7 +21,71 @@ height = 230.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_svts0"]
 radius = 128.035
 
+<<<<<<< HEAD
 [node name="Enemy" instance=ExtResource("1_bifvu")]
+=======
+[sub_resource type="Animation" id="Animation_7f2af"]
+resource_name = "attack"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hurtbox/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.807338, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.2, 0.3)
+}
+
+[sub_resource type="Animation" id="Animation_upwx0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hurtbox/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ktxs7"]
+_data = {
+"RESET": SubResource("Animation_upwx0"),
+"attack": SubResource("Animation_7f2af")
+}
+
+[node name="Pea" instance=ExtResource("1_bifvu")]
+script = ExtResource("2_ekckt")
+enemyName = "pea"
+>>>>>>> b06b4b35c128240f85faccddfc1e98c8507ffdc9
 
 [node name="CollisionShape2D" parent="." index="0"]
 position = Vector2(-7, 1)
@@ -25,6 +96,10 @@ shape = SubResource("CapsuleShape2D_7nwlx")
 position = Vector2(-7, -4)
 rotation = -0.426439
 shape = SubResource("CapsuleShape2D_lo0hj")
+<<<<<<< HEAD
+=======
+disabled = true
+>>>>>>> b06b4b35c128240f85faccddfc1e98c8507ffdc9
 
 [node name="CollisionShape2D" parent="Range" index="0"]
 position = Vector2(-3, -3)
@@ -36,3 +111,9 @@ scale = Vector2(0.38153, 0.38153)
 texture = ExtResource("2_ogy2u")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="6"]
+<<<<<<< HEAD
+=======
+libraries = {
+"": SubResource("AnimationLibrary_ktxs7")
+}
+>>>>>>> b06b4b35c128240f85faccddfc1e98c8507ffdc9
