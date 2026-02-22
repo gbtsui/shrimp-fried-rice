@@ -6,7 +6,6 @@ var upHeld: int = 0
 var leftHeld: int = 0
 var rightHeld: int = 0
 
-const starting_hp = 10.0
 
 const knifeDamage = 2.5
 const speed = 200
@@ -19,7 +18,6 @@ var dir_to_closest_enemy: Vector2
 
 func _ready():
 	stateManager.change_state(0)
-	healthManager.max_hp = starting_hp
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("down"): downHeld = 1
