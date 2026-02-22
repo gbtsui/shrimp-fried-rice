@@ -1,10 +1,13 @@
 extends Node
 class_name HealthManager
 
-@export var hp = 10.0
-@export var max_hp = 10.0
+@export var hp: float
+@export var max_hp: float
 
 @onready var deathManager: DeathManager = get_parent().get_node("DeathManager")
+
+func _ready():
+	hp = max_hp
 
 func damage(dmg_amount):
 	hp -= dmg_amount
