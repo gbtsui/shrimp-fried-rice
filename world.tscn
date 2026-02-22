@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://blea2gg8sfq77"]
+[gd_scene load_steps=23 format=3 uid="uid://blea2gg8sfq77"]
 
 [ext_resource type="Texture2D" uid="uid://hm1jhjredype" path="res://assets/background .png" id="1_r167m"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="2_2mmbc"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://scripts/pocket_msg_manager.gd" id="9_3x0cf"]
 [ext_resource type="Script" path="res://scripts/kill_manager.gd" id="12_skmim"]
 [ext_resource type="Script" path="res://scripts/wave_manager.gd" id="13_o54qq"]
+[ext_resource type="PackedScene" uid="uid://cf7nnl7p1pex7" path="res://scenes/carrot.tscn" id="13_oaw6k"]
 [ext_resource type="Script" path="res://scripts/timekeeper.gd" id="14_8x3vt"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xtgva"]
@@ -105,6 +106,7 @@ _data = {
 }
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uli3x"]
+normal = Vector2(-0.0174954, 0.999847)
 
 [node name="Root" type="Node2D"]
 
@@ -185,27 +187,30 @@ script = ExtResource("13_o54qq")
 [node name="boundaries" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="boundaries"]
-position = Vector2(-10, 540)
+position = Vector2(-10, 500)
 shape = SubResource("WorldBoundaryShape2D_uli3x")
 one_way_collision = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="boundaries"]
-position = Vector2(-5, -542)
+position = Vector2(-5, -498)
 rotation = -3.1321
 shape = SubResource("WorldBoundaryShape2D_uli3x")
 one_way_collision = true
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="boundaries"]
-position = Vector2(-959, -2)
+position = Vector2(-907, -2)
 rotation = 1.58943
 shape = SubResource("WorldBoundaryShape2D_uli3x")
 one_way_collision = true
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="boundaries"]
-position = Vector2(958, 2)
+position = Vector2(898, 2)
 rotation = 1.5533
 shape = SubResource("WorldBoundaryShape2D_uli3x")
 one_way_collision = true
+
+[node name="Enemy" parent="boundaries" instance=ExtResource("13_oaw6k")]
+position = Vector2(643, 170)
 
 [node name="SpawnPoint1" type="Node2D" parent="."]
 position = Vector2(1135, 0)

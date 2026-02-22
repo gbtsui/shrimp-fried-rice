@@ -3,11 +3,11 @@ class_name Enemy
 
 var player: Player
 
-const speed = 100
+@export var speed = 100
 
 var playerInRange = false
 
-var timeBetweenAttacks = 2.0
+@export var timeBetweenAttacks = 2.0
 var attackTimer = 0.0
 
 @export var enemyName: String
