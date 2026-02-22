@@ -1,11 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://dj6ew4rarwj2p"]
+[gd_scene load_steps=6 format=3 uid="uid://c0l0p87fxxkd"]
 
-[ext_resource type="Script" uid="uid://6yq3x6vcp76" path="res://node_2d.gd" id="1_55via"]
+[ext_resource type="Script" path="res://node_2d.gd" id="1_55via"]
 [ext_resource type="Texture2D" uid="uid://tjt3myuks0yy" path="res://Ricehut.png" id="2_5uqbi"]
 [ext_resource type="Texture2D" uid="uid://pkjwflhqhbgs" path="res://Insidethericehut.png" id="3_m2rfp"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5uqbi"]
+bg_color = Color(0.726312, 0.732957, 0.751171, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m2rfp"]
-bg_color = Color(0.27752772, 0.27752775, 0.27752757, 0.7137255)
+bg_color = Color(0.277528, 0.277528, 0.277528, 0.713726)
 corner_radius_top_left = 80
 corner_radius_top_right = 80
 corner_radius_bottom_right = 80
@@ -15,19 +18,33 @@ expand_margin_top = 90.0
 expand_margin_right = 90.0
 expand_margin_bottom = 40.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5uqbi"]
-bg_color = Color(0.7263122, 0.7329569, 0.7511705, 1)
-
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_55via")
 
 [node name="Ricehut" type="TextureRect" parent="."]
-offset_left = -5.0
-offset_top = 1.0
-offset_right = 1932.0
-offset_bottom = 1074.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_5uqbi")
 expand_mode = 1
+
+[node name="intothericehut" type="TextureRect" parent="."]
+visible = false
+custom_minimum_size = Vector2(1080, 700)
+offset_left = -1.0
+offset_top = 4.0
+offset_right = 1941.0
+offset_bottom = 1084.0
+texture = ExtResource("3_m2rfp")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 49.0
@@ -41,16 +58,7 @@ offset_top = 704.0
 offset_right = 1864.0
 offset_bottom = 1047.0
 theme_override_font_sizes/normal_font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_m2rfp")
 theme_override_styles/focus = SubResource("StyleBoxFlat_5uqbi")
-
-[node name="intothericehut" type="TextureRect" parent="."]
-visible = false
-custom_minimum_size = Vector2(1080, 700)
-offset_left = -1.0
-offset_top = 4.0
-offset_right = 1941.0
-offset_bottom = 1084.0
-texture = ExtResource("3_m2rfp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_m2rfp")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

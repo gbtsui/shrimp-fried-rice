@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bl46kao2ap0r1"]
+[gd_scene load_steps=2 format=3 uid="uid://dii4lpomcd6rw"]
 
-[ext_resource type="Script" uid="uid://dldpq2in2hx7d" path="res://dokivn/examples/add_to_test.gd" id="1_wtcfe"]
+[ext_resource type="Script" path="res://dokivn/examples/add_to_test.gd" id="1_wtcfe"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_wtcfe")
