@@ -4,6 +4,7 @@ class_name HealthManager
 @export var hp: float
 @export var max_hp: float
 
+
 @onready var deathManager: DeathManager = get_parent().get_node("DeathManager")
 
 func _ready():

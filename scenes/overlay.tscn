@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://djvoqyul6vtl3"]
+[gd_scene load_steps=6 format=3 uid="uid://djvoqyul6vtl3"]
 
 [ext_resource type="Texture2D" uid="uid://dg02wkqak4okh" path="res://assets/receipt taped.png" id="1_01ypv"]
 [ext_resource type="Texture2D" uid="uid://ba01cjsx85y5m" path="res://assets/soy sauce.png" id="2_vtu2a"]
+[ext_resource type="Texture2D" uid="uid://w81sr5g8flf7" path="res://assets/calendar.png" id="3_r7n6l"]
+[ext_resource type="Texture2D" uid="uid://ckvr81c473ty8" path="res://assets/Pea/Untitled_Artwork-4.png" id="3_yg6k6"]
+[ext_resource type="Texture2D" uid="uid://bngbjc63351a4" path="res://assets/clock.png" id="4_3etg8"]
 
 [node name="Overlay" type="Control"]
 layout_mode = 3
@@ -10,12 +13,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="ReceiptTaped" type="Sprite2D" parent="."]
-position = Vector2(1806, 144)
-rotation = 0.0872665
-scale = Vector2(0.358283, 0.321828)
-texture = ExtResource("1_01ypv")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -50,3 +47,88 @@ expand_mode = 3
 layout_mode = 2
 texture = ExtResource("2_vtu2a")
 expand_mode = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -786.0
+offset_top = 22.0
+offset_right = -22.0
+offset_bottom = 275.0
+grow_horizontal = 0
+alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("1_01ypv")
+expand_mode = 3
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("1_01ypv")
+expand_mode = 3
+
+[node name="TextureRect3" type="TextureRect" parent="HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("1_01ypv")
+expand_mode = 3
+
+[node name="TextureRect4" type="TextureRect" parent="HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("1_01ypv")
+expand_mode = 3
+
+[node name="TextureRect5" type="TextureRect" parent="HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("1_01ypv")
+expand_mode = 3
+
+[node name="TextureRect6" type="TextureRect" parent="HBoxContainer2/TextureRect5"]
+layout_mode = 2
+offset_left = -34.0
+offset_top = 20.0
+offset_right = 148.0
+offset_bottom = 180.0
+texture = ExtResource("3_yg6k6")
+expand_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer2/TextureRect5"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 164.0
+offset_right = 108.0
+offset_bottom = 236.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 50
+text = "5"
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 323.0
+offset_bottom = 328.0
+texture = ExtResource("3_r7n6l")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect2"]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 87.0
+offset_right = 324.0
+offset_bottom = 323.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/bold_italics_font_size = 10
+theme_override_font_sizes/italics_font_size = 10
+theme_override_font_sizes/mono_font_size = 10
+theme_override_font_sizes/normal_font_size = 150
+text = "1"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 282.0
+offset_top = -6.0
+offset_right = 497.0
+offset_bottom = 189.0
+texture = ExtResource("4_3etg8")
+expand_mode = 3
+flip_v = true

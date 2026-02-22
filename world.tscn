@@ -10,7 +10,7 @@
 [ext_resource type="Script" path="res://scripts/death_manager.gd" id="6_jsb6b"]
 [ext_resource type="Script" path="res://player_state_manager.gd" id="7_gawbx"]
 [ext_resource type="Script" path="res://scripts/pocket_msg_manager.gd" id="9_3x0cf"]
-[ext_resource type="PackedScene" uid="uid://c72fu1xd0qnnn" path="res://scenes/pea.tscn" id="12_pncpm"]
+[ext_resource type="PackedScene" path="res://scenes/pea.tscn" id="12_pncpm"]
 [ext_resource type="Script" path="res://scripts/kill_manager.gd" id="12_skmim"]
 [ext_resource type="Script" path="res://scripts/wave_manager.gd" id="13_o54qq"]
 [ext_resource type="Script" path="res://scripts/timekeeper.gd" id="14_8x3vt"]
