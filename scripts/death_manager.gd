@@ -22,4 +22,5 @@ func kys():
 		parent.modulate = Color(0,0,0)
 		parent.get_node("CanvasLayer").flashy_go_brr()
 	elif mode == DEATH_MODE.ENEMY:
+		get_tree().root.get_node("Root/KillManager").kill_off_enemy(parent)
 		parent.queue_free() #add more later i guess??
