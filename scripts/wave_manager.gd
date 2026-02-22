@@ -1,18 +1,11 @@
-<<<<<<< HEAD
-extends Node2D
-=======
+
 extends Node
->>>>>>> b06b4b35c128240f85faccddfc1e98c8507ffdc9
 class_name WaveManager
 
 const enemies: Dictionary = {
 	"pea": preload("res://scenes/pea.tscn")
 }
 
-<<<<<<< HEAD
-func spawn_enemy(enemyType: String):
-	pass
-=======
 @export var enemyLimit = 5
 
 @onready var spawnpoints = get_tree().root.get_node("Root").find_children("SpawnPoint*")
@@ -30,4 +23,3 @@ func spawn_enemy(enemyType: String):
 func _process(delta: float) -> void:
 	if killman.currently_alive_enemies.size() < enemyLimit and randf() < 0.04:
 		spawn_enemy(enemies.keys().pick_random())
->>>>>>> b06b4b35c128240f85faccddfc1e98c8507ffdc9

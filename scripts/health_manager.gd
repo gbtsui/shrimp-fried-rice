@@ -1,13 +1,9 @@
 extends Node
 class_name HealthManager
 
-<<<<<<< HEAD
 @export var hp = 10.0
 @export var max_hp = 10.0
-=======
-@export var hp: float
-@export var max_hp: float
->>>>>>> b06b4b35c128240f85faccddfc1e98c8507ffdc9
+
 
 @onready var deathManager: DeathManager = get_parent().get_node("DeathManager")
 

@@ -6,10 +6,7 @@ var upHeld: int = 0
 var leftHeld: int = 0
 var rightHeld: int = 0
 
-<<<<<<< HEAD
-=======
 const starting_hp = 10.0
->>>>>>> b06b4b35c128240f85faccddfc1e98c8507ffdc9
 
 const knifeDamage = 2.5
 const speed = 200
