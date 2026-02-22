@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://c72fu1xd0qnnn"]
+
+[ext_resource type="PackedScene" uid="uid://tmyggngok3eb" path="res://scenes/enemy.tscn" id="1_bifvu"]
+[ext_resource type="Texture2D" uid="uid://d3y5gj7n1neor" path="res://assets/Pea/Untitled_Artwork-1.png" id="2_ogy2u"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7nwlx"]
+radius = 21.7139
+height = 191.663
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lo0hj"]
+radius = 43.0
+height = 230.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_svts0"]
+radius = 128.035
+
+[node name="Enemy" instance=ExtResource("1_bifvu")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(-7, 1)
+rotation = -0.385961
+shape = SubResource("CapsuleShape2D_7nwlx")
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2(-7, -4)
+rotation = -0.426439
+shape = SubResource("CapsuleShape2D_lo0hj")
+
+[node name="CollisionShape2D" parent="Range" index="0"]
+position = Vector2(-3, -3)
+shape = SubResource("CircleShape2D_svts0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="5"]
+position = Vector2(53.1894, -1.25001)
+scale = Vector2(0.38153, 0.38153)
+texture = ExtResource("2_ogy2u")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="6"]

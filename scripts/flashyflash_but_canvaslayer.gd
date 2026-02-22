@@ -20,4 +20,4 @@ func flashy_go_brr():
 	tween.tween_property($CanvasLayer/Control/Label, "modulate", Color(1,1,1,0.9), 3) 
 
 func _process(delta):
-	$Sprite2D.position = get_parent().position
+	$Sprite2D.global_position = get_parent().global_position
