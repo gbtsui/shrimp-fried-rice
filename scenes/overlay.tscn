@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://djvoqyul6vtl3"]
+[gd_scene load_steps=6 format=3 uid="uid://djvoqyul6vtl3"]
 
 [ext_resource type="Texture2D" uid="uid://dg02wkqak4okh" path="res://assets/receipt taped.png" id="1_01ypv"]
 [ext_resource type="Texture2D" uid="uid://ba01cjsx85y5m" path="res://assets/soy sauce.png" id="2_vtu2a"]
 [ext_resource type="Texture2D" uid="uid://w81sr5g8flf7" path="res://assets/calendar.png" id="3_r7n6l"]
+[ext_resource type="Texture2D" uid="uid://ckvr81c473ty8" path="res://assets/Pea/Untitled_Artwork-4.png" id="3_yg6k6"]
 [ext_resource type="Texture2D" uid="uid://bngbjc63351a4" path="res://assets/clock.png" id="4_3etg8"]
 
 [node name="Overlay" type="Control"]
@@ -83,6 +84,25 @@ expand_mode = 3
 layout_mode = 2
 texture = ExtResource("1_01ypv")
 expand_mode = 3
+
+[node name="TextureRect6" type="TextureRect" parent="HBoxContainer2/TextureRect5"]
+layout_mode = 2
+offset_left = -34.0
+offset_top = 20.0
+offset_right = 148.0
+offset_bottom = 180.0
+texture = ExtResource("3_yg6k6")
+expand_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer2/TextureRect5"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 164.0
+offset_right = 108.0
+offset_bottom = 236.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 50
+text = "5"
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 layout_mode = 0
