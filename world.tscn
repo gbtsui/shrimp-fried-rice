@@ -38,11 +38,6 @@ size = Vector2(67, 52.5)
 [sub_resource type="CircleShape2D" id="CircleShape2D_pypen"]
 radius = 58.0775
 
-[sub_resource type="Animation" id="Animation_clai4"]
-resource_name = "death"
-length = 0.1
-loop_mode = 1
-
 [sub_resource type="Animation" id="Animation_bntka"]
 length = 0.001
 tracks/0/type = "value"
@@ -97,6 +92,11 @@ tracks/1/keys = {
 "update": 1,
 "values": [true, false, true]
 }
+
+[sub_resource type="Animation" id="Animation_clai4"]
+resource_name = "death"
+length = 0.1
+loop_mode = 1
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8a5nn"]
 _data = {
