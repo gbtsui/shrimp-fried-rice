@@ -8,8 +8,11 @@ var rightHeld: int = 0
 
 const starting_hp = 10.0
 
-const knifeDamage = 2.5
-const speed = 200
+const baseKnifeDamage = 2.5
+const baseSpeed = 200
+
+var knifeDamage = baseKnifeDamage
+var speed = baseSpeed
 
 @onready var stateManager = $PlayerStateManager
 @onready var healthManager = $HealthManager

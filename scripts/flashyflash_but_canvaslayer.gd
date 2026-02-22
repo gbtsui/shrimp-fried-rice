@@ -19,6 +19,10 @@ func flashy_go_brr():
 	
 	var tween = get_tree().create_tween()
 	tween.tween_property($CanvasLayer/Control/Label, "modulate", Color(1,1,1,0.9), 3) 
+	
+	await get_tree().create_timer(3).timeout
+	
+	get_tree().change_scene_to_file("res://startscreen.tscn")
 
 func _process(delta):
 	$Sprite2D.global_position = get_parent().global_position

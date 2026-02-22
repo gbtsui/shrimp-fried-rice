@@ -16,8 +16,10 @@ func _ready() -> void:
 	start_dialogue()
 
 func _process(_delta: float) -> void:
-	if dialogue_active and Input.is_action_just_pressed("ui_accept"):
+	if dialogue_active and (Input.is_action_just_pressed("knife") or Input.is_action_just_pressed("shootMSG") or Input.is_action_just_pressed("drinkSoySauce")):
 		next_line()
+	if Input.is_action_just_pressed("coin"):
+		switch_to_scene(next_scene_path)
 
 # ---------------------------------------
 # Dialogue Setup

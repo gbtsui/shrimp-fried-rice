@@ -49,10 +49,12 @@ texture = ExtResource("3_m2rfp")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 49.0
+offset_left = 44.0
 offset_top = 598.0
-offset_right = 771.0
+offset_right = 766.0
 offset_bottom = 690.0
+theme_override_font_sizes/font_size = 30
+vertical_alignment = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
@@ -60,8 +62,9 @@ offset_left = 33.0
 offset_top = 704.0
 offset_right = 1864.0
 offset_bottom = 1047.0
-theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/normal_font_size = 40
 theme_override_styles/focus = SubResource("StyleBoxFlat_5uqbi")
 theme_override_styles/normal = SubResource("StyleBoxFlat_m2rfp")
+fit_content = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

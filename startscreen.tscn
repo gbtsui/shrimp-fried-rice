@@ -1,0 +1,107 @@
+[gd_scene load_steps=7 format=3 uid="uid://6d7p3a6a7xop"]
+
+[ext_resource type="Script" path="res://startscreen.gd" id="1_skcdx"]
+[ext_resource type="Texture2D" uid="uid://bh63y11ciytp8" path="res://assets/Untitled_Artwork.jpg" id="2_yea3q"]
+[ext_resource type="Texture2D" uid="uid://2u2p226bjirq" path="res://assets/logo.png" id="3_u8dpr"]
+
+[sub_resource type="Animation" id="Animation_y3rww"]
+resource_name = "aga"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect/TextureRect:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.433333, 0.666667, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.565888, 0.565888), Vector2(0.608572, 0.439871), Vector2(0.43489, 0.557351), Vector2(0.535144, 0.449216), Vector2(0.454269, 0.663215), Vector2(0.5, 0.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.266667, 0.466667, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 1), Color(0.766667, 1, 0, 1), Color(0, 1, 0.883333, 1), Color(0.616667, 0, 1, 1), Color(1, 0, 0.0166664, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_4356g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect/TextureRect:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.565888, 0.565888)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yommp"]
+_data = {
+"RESET": SubResource("Animation_4356g"),
+"aga": SubResource("Animation_y3rww")
+}
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_skcdx")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_yea3q")
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.565888, 0.565888)
+texture = ExtResource("3_u8dpr")
+expand_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_yommp")
+}
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 530.0
+offset_top = 908.0
+offset_right = 1399.0
+offset_bottom = 1045.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "press coin to start"
