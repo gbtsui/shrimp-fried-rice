@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://djvoqyul6vtl3"]
+
+[ext_resource type="Texture2D" uid="uid://dg02wkqak4okh" path="res://assets/receipt taped.png" id="1_01ypv"]
+[ext_resource type="Texture2D" uid="uid://ba01cjsx85y5m" path="res://assets/soy sauce.png" id="2_vtu2a"]
+
+[node name="Overlay" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ReceiptTaped" type="Sprite2D" parent="."]
+position = Vector2(1806, 144)
+rotation = 0.0872665
+scale = Vector2(0.358283, 0.321828)
+texture = ExtResource("1_01ypv")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1520.0
+offset_top = -234.0
+offset_right = -248.0
+grow_horizontal = 0
+grow_vertical = 0
+alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_vtu2a")
+expand_mode = 3
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_vtu2a")
+expand_mode = 3
+
+[node name="TextureRect3" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_vtu2a")
+expand_mode = 3
+
+[node name="TextureRect4" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_vtu2a")
+expand_mode = 3
